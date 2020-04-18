@@ -1,13 +1,16 @@
-import React, { useState }from 'react';
-import Main from './components/MainComponent'; 
+import React from 'react';
+import Main from './components/MainComponent';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 
 function App() {
     return (
-        <div className="app">
-          <Main />
-      </div>
+        <BrowserRouter>
+            <div className="App">
+                <Main />
+            </div>
+        </BrowserRouter>
   );
 }
 
