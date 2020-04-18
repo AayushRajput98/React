@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\src"
+    "\\public\\assets",
+    "\\public\\assets\\images",
+    "\\src",
+    "\\src\\components",
+    "\\src\\shared"
   ],
-  "SelectedNode": "\\public\\index.html",
+  "SelectedNode": "\\src\\components\\MenuComponent.js",
   "PreviewInSolutionExplorer": false
 }
