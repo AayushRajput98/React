@@ -1,3 +1,6 @@
+.app {
+    background-color: #dbcbf7;
+}
 .row-header {
     margin: 0px auto;
     padding: 0px auto;
@@ -5,13 +8,14 @@
 
 .row-content {
     margin: 0px auto;
-    padding: 50px 0px 50px 0px;
+    padding: 10px 0px 10px 0px;
     border-bottom: 1px ridge;
     min-height: 400px;
 }
 
 .footer {
-    background-color: #D1C4E9;
+    background-color: #9575CD;
+    color: floralwhite;
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
 }
@@ -23,10 +27,30 @@
     color: floralwhite;
 }
 
+.btn {
+    padding: 20px;
+    font-size: 15px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+a{
+    color: floralwhite;
+}
+
+a:hover {
+    color: purple;
+    text-decoration: none;
+}
+
+
 address {
     font-size: 80%;
     margin: 0px;
-    color: #0f0f0f;
+    color: floralwhite;
 }
 
 .navbar-dark {
