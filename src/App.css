@@ -1,4 +1,4 @@
-.app {
+.App {
     background-color: #dbcbf7;
 }
 .row-header {
@@ -27,7 +27,7 @@
     color: floralwhite;
 }
 
-.btn {
+.btn-footer {
     padding: 20px;
     font-size: 15px;
     width: 30px;

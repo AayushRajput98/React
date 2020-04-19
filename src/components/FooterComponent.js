@@ -37,11 +37,11 @@ function Footer(props){
                     <div className="col-12 col-sm-3 align-self-right">
                         <h5>Follow</h5>
                         <div>
-                            <a className="btn btn-social-icon btn-google" href="http://google.com/+"><i className="fa fa-google"></i></a>
-                            <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i className="fa fa-facebook"></i></a>
-                            <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
-                            <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
-                            <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube"></i></a>
+                            <a className="btn-footer btn btn-social-icon btn-google" href="http://google.com/+"><i className="fa fa-google"></i></a>
+                            <a className="btn-footer btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i className="fa fa-facebook"></i></a>
+                            <a className="btn-footer btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
+                            <a className="btn-footer btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
+                            <a className="btn-footer btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
