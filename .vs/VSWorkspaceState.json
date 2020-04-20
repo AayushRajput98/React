@@ -5,9 +5,8 @@
     "\\public\\assets",
     "\\public\\assets\\images",
     "\\src",
-    "\\src\\components",
-    "\\src\\shared"
+    "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\MenuComponent.js",
+  "SelectedNode": "\\src\\components\\MainComponent.js",
   "PreviewInSolutionExplorer": false
 }
