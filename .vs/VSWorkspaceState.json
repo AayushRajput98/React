@@ -5,8 +5,9 @@
     "\\public\\assets",
     "\\public\\assets\\images",
     "\\src",
-    "\\src\\components"
+    "\\src\\components",
+    "\\src\\redux"
   ],
-  "SelectedNode": "\\src\\components\\HeaderComponent.js",
+  "SelectedNode": "\\src\\components\\ContactComponent.js",
   "PreviewInSolutionExplorer": false
 }
