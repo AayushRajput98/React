@@ -71,7 +71,7 @@ class Header extends Component {
                             </Nav>
                             <Nav className='ml-auto'>
                                 <NavItem>
-                                    <Button outline onClick={this.toggleModal}> <span className="fa fa-sign-in fa-lg"></span> Login </Button>
+                                    <Button outline onClick={this.toggleModal} style={{ backgroundColor: "#9575CD" , color: "floralwhite"}}> <span className="fa fa-sign-in fa-lg"></span> Login </Button>
                                 </NavItem>
                             </Nav>
                         </Collapse>
@@ -111,7 +111,9 @@ class Header extends Component {
                                     <strong>Remember me.</strong>
                                 </Label>
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
+                            <FormGroup className="m-1 ml-auto">
+                                <Button type="submit" value="submit" style={{ backgroundColor: "#9575CD" }}>Login</Button>
+                            </FormGroup>
                         </Form>
                     </ModalBody>
                 </Modal>
