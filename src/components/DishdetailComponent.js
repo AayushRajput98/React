@@ -21,7 +21,7 @@ function RenderDish({ dish }) {
     );
 }
 
-function RenderComment({ comments }) {
+function RenderComment({ comments, addComment, dishId }) {
     
         if (comments != null) {
             const comment = comments.map((comment) => {
@@ -51,7 +51,7 @@ function RenderComment({ comments }) {
                     <ul className="list-unstyled">
                         {comment}
                     </ul>
-                    <CommentForm />
+                    <CommentForm dishId={dishId} addComment={addComment} />
                 </div>
             );
         }
@@ -82,7 +82,10 @@ const DishDetail = (props) => {
                         <RenderDish dish={props.dish} />
                     </div>
                     <div className='col-12 col-md-5 mt-1 mb-1'>
-                        <RenderComment comments={props.comments} />
+                        <RenderComment
+                            comments={props.comments}
+                            addComment={props.addComment}
+                            dishId={props.dish.id} />
                     </div>
                 </div>
             </div>
@@ -115,8 +118,8 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values) {
-        alert("Current State is: " + JSON.stringify(values));
         this.toggleModal();
+        this.props.addComment(this.props.dishId, values.rating, values.fullname, values.comment);
     }
 
     render() {
@@ -173,7 +176,7 @@ class CommentForm extends Component {
                                 </Row>
                                 <Row className="form-group">
                                     <Col md={12}>
-                                        <Button type="submit" value="submit" style={{ backgroundColor: "#9575CD" }}>Login</Button>
+                                        <Button type="submit" value="submit" style={{ backgroundColor: "#9575CD" }}>Submit Comment</Button>
                                     </Col>
                                 </Row>
                             </LocalForm>
