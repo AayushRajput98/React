@@ -6,8 +6,7 @@
     "\\public\\assets\\images",
     "\\src",
     "\\src\\components",
-    "\\src\\redux",
-    "\\src\\shared"
+    "\\src\\redux"
   ],
   "SelectedNode": "\\src\\components\\HeaderComponent.js",
   "PreviewInSolutionExplorer": false
