@@ -4,6 +4,7 @@ import {
     Card, CardImg, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem,
     Button, Modal, ModalBody, ModalHeader, Row, Label, Col
 } from 'reactstrap';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 import { LocalForm, Control, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
@@ -13,13 +14,18 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 
 function RenderDish({ dish }) {
     return (
-        <Card>
-            <CardImg width='100%' src={baseUrl + dish.image} alt={dish.name} />
-            <CardBody>
-                <CardTitle> {dish.name} </CardTitle>
-                <CardText> {dish.description} </CardText>
-            </CardBody>
-        </Card>
+        <FadeTransform in
+            transformProps={{
+                exitTransform: 'scale(0.5) translateY(-50%)'
+            }}>
+            <Card>
+                <CardImg width='100%' src={baseUrl + dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle> {dish.name} </CardTitle>
+                    <CardText> {dish.description} </CardText>
+                </CardBody>
+            </Card>
+        </FadeTransform>
     );
 }
 
@@ -32,18 +38,20 @@ function RenderComment({ comments, postComment, dishId }) {
                 var split_date = date.split("-");
                 var Date = months[parseInt(split_date[1]) - 1] + ' ' + split_date[2].substring(0, 2) + ', ' + split_date[0];
                 return (
-                    <li>
-                        <div className='row'>
-                            <div className='col'>
-                                <p> {comment.comment} </p>
+                    <Fade in>
+                        <li>
+                            <div className='row'>
+                                <div className='col'>
+                                    <p> {comment.comment} </p>
+                                </div>
                             </div>
-                        </div>
-                        <div className='row'>
-                            <div className='col'>
-                                <p> -- {comment.author} , {Date} </p>
+                            <div className='row'>
+                                <div className='col'>
+                                    <p> -- {comment.author} , {Date} </p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    </Fade>
                 );
             }
             );
@@ -51,9 +59,11 @@ function RenderComment({ comments, postComment, dishId }) {
                 <div>
                     <h4> Comments </h4>
                     <ul className="list-unstyled">
-                        {comment}
+                        <Stagger in>
+                            {comment}
+                        </Stagger>
                     </ul>
-                    <CommentForm dishId={dishId} postComment={postComment} />
+                    <CommentForm dishId={dishId} postComment={postComment} />                    
                 </div>
             );
         }
