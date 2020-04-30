@@ -1,22 +1,39 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { Fade, Stagger } from 'react-animation-components';
 import { Link } from 'react-router-dom';
+import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
-function RenderLeaders({ leader }) {
-    return (
-        <div>
-            <Media tag='li'>
-                <Media left>
-                    <Media className='mr-4' object src={leader.image} width='110' height='120' />
-                </Media>
-                <Media body>
-                    <Media heading> {leader.name} </Media>
-                    <p> {leader.designation} </p>
-                    {leader.description}
-                </Media>
-            </Media>
-        </div>
+function RenderLeaders({ leader, isLoading, errMess }) {
+    if (isLoading) {
+        return (
+            <Loading />
         );
+    }
+    else if (errMess) {
+        return (
+            <h4>{errMess}</h4>
+        );
+    }
+    else {
+        return (
+            <div>
+                <Fade in>
+                    <Media tag='li'>
+                        <Media left>
+                            <Media className='mr-4' object src={baseUrl + leader.image} width='110' height='120' />
+                        </Media>
+                        <Media body>
+                            <Media heading> {leader.name} </Media>
+                            <p> {leader.designation} </p>
+                            {leader.description}
+                        </Media>
+                    </Media>
+                </Fade>
+            </div>
+        );
+    }
 }
 
 function About(props) {
@@ -24,7 +41,7 @@ function About(props) {
     const leaders = props.leaders.map((leader) => {
         return (
             <div className='container m-5'>
-                <RenderLeaders leader={leader} />
+                <RenderLeaders leader={leader} isLoading={props.leadersLoading} errMess={props.leadersErrMess} />
             </div>
         );
     });
@@ -85,7 +102,9 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
-                        {leaders}
+                        <Stagger in>
+                            {leaders}
+                        </Stagger>
                     </Media>
                 </div>
             </div>
